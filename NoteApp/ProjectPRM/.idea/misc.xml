@@ -3,12 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1475" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_add_button.xml" value="0.1545" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_done_button.xml" value="0.1545" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note.xml" value="0.1475" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_search.xml" value="0.2305" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.1495" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_add.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_add_outline.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_done.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_search.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_web_link.xml" value="0.1475" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/activity_create_note.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/activity_main.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/item_container_note.xml" value="0.25" />
       </map>
     </option>
   </component>
