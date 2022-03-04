@@ -22,7 +22,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_ADD_NOTE = 1;
-
+    //RecylerView để hiện thị dữ liệu dưới dạng danh sách ngang đứng LinearLayoutManager
     private RecyclerView noteRecyclerView;
     private List<Note> noteList;
     private NoteAdapters noteAdapter;
@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ImageView addNewNote = findViewById(R.id.imageAddNoteMain);
+        // Click vào image add => chuyển sang CreateNoteActivity
         addNewNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             protected List<Note> doInBackground(Void... voids) {
-
+                // lưu note vào database
                 return NoteDatabase.
                         getDatabase(getApplicationContext()).noteDao().getAllNotes();
             }
@@ -64,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Note> notes) {
                 super.onPostExecute(notes);
+                // hiển thị note lên mainActivityLayout
                 if(noteList.size()==0){
                     noteList.addAll(notes);
                     noteAdapter.notifyDataSetChanged();
@@ -82,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // checck chuyển sang add, và kết quả done -> getNotes
         if(requestCode == REQUEST_CODE_ADD_NOTE && resultCode == RESULT_OK){
             getNotes();
         }

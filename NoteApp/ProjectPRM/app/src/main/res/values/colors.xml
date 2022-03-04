@@ -12,7 +12,7 @@
     <color name="TextSubtitle">#CECECE</color>
     <color name="DefaultNoteColor">#333333</color>
     <color name="NoteSubtitleText">#FAFAFA</color>
-    <color name="MiscellaneousBackground">#1F1F1F</color>
+    <color name="MixedBackground">#1F1F1F</color>
     <color name="NoteColor2">#FDBE3B</color>
     <color name="NoteColor3">#FF4842</color>
     <color name="NoteColor4">#3A52FC</color>

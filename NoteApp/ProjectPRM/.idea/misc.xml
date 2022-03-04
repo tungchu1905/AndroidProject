@@ -6,7 +6,13 @@
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1475" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_add_button.xml" value="0.1545" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_done_button.xml" value="0.1545" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_mixed.xml" value="0.1475" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note_color1.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note_color2.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note_color3.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note_color4.xml" value="0.1475" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_note_color5.xml" value="0.1295" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_search.xml" value="0.2305" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/background_subtitle_indicator.xml" value="0.1495" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/drawable/ic_add.xml" value="0.1475" />
@@ -18,6 +24,7 @@
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/activity_create_note.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/activity_main.xml" value="0.25271739130434784" />
         <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/item_container_note.xml" value="0.25" />
+        <entry key="..\:/Users/HP/Downloads/Learn/ProjectPRM/app/src/main/res/layout/layout_mixed.xml" value="0.16435185185185186" />
       </map>
     </option>
   </component>

@@ -1,8 +1,11 @@
 package com.example.android_projectnoteapp.adapter;
 
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +16,8 @@ import com.example.android_projectnoteapp.entities.Note;
 
 import java.util.List;
 
+// ADAPTER lấy dữ liệu từ bộ dữ liệu và tạo ra các đối tượngView
+//RecyclerView.Adapter Quản lý dữ liệu và cập nhật dữ liệu cần hiện thị vào View
 public class NoteAdapters extends  RecyclerView.Adapter<NoteAdapters.NoteViewHolder>{
     private  List<Note> noteList;
 
@@ -45,14 +50,17 @@ public class NoteAdapters extends  RecyclerView.Adapter<NoteAdapters.NoteViewHol
         return position;
     }
 
+    //RecyclerView.Viewholder lớp dùng để gán / cập nhật dữ liệu vào các phần tử.
     static class NoteViewHolder extends RecyclerView.ViewHolder{
         TextView textTitle, textSubtitle, textDateTime;
+        LinearLayout layoutNote;
 
         public NoteViewHolder(@NonNull View itemView) {
             super(itemView);
             textTitle = itemView.findViewById(R.id.textTittle);
             textSubtitle = itemView.findViewById(R.id.textSubtitle);
             textDateTime = itemView.findViewById(R.id.textDateView);
+            layoutNote = itemView.findViewById(R.id.layoutNote);
         }
 
         void setNote(Note note){
@@ -63,6 +71,15 @@ public class NoteAdapters extends  RecyclerView.Adapter<NoteAdapters.NoteViewHol
                 textSubtitle.setText(note.getSubtitle());
             }
             textDateTime.setText(note.getDateTime());
+
+
+            // ĐỔI MÀU COLOR HIỂN THỊ SANG BÊN MAINACIVITY
+            GradientDrawable gradientDrawable = (GradientDrawable) layoutNote.getBackground();
+            if(note.getColor() != null){
+                gradientDrawable.setColor(Color.parseColor(note.getColor()));
+            }else{
+                gradientDrawable.setColor(Color.parseColor("#333333"));
+            }
         }
     }
 }
