@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.android_projectnoteapp.R;
+import com.example.android_projectnoteapp.adapter.NoteAdapters;
 import com.example.android_projectnoteapp.database.NoteDatabase;
 import com.example.android_projectnoteapp.entities.Note;
 
@@ -22,9 +23,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_CODE_ADD_NOTE = 1;
 
-//    private RecyclerView noteRecyclerView;
-//    private List<Note> noteList;
-//    private NoteAdapter noteAdapter;
+    private RecyclerView noteRecyclerView;
+    private List<Note> noteList;
+    private NoteAdapters noteAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,14 +39,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        noteRecyclerView = findViewById(R.id.noteRecyclerView);
-//        noteRecyclerView.setLayoutManager(
-//                new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
-//        );
-//
-//        noteList = new ArrayList<>();
-//        noteAdapter = new NoteAdapter(noteList);
-//        noteRecyclerView.setAdapter(noteAdapter);
+        noteRecyclerView = findViewById(R.id.noteRecyclerView);
+        noteRecyclerView.setLayoutManager(
+                new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+        );
+
+        noteList = new ArrayList<>();
+        noteAdapter = new NoteAdapters(noteList);
+        noteRecyclerView.setAdapter(noteAdapter);
         getNotes();
     }
 
@@ -63,7 +64,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(List<Note> notes) {
                 super.onPostExecute(notes);
-
+                if(noteList.size()==0){
+                    noteList.addAll(notes);
+                    noteAdapter.notifyDataSetChanged();
+                }else{
+                    noteList.add(0, notes.get(0));
+                    noteAdapter.notifyItemInserted(0);
+                }
+                noteRecyclerView.smoothScrollToPosition(0);
             }
         }
 
@@ -71,11 +79,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        if(requestCode == REQUEST_CODE_ADD_NOTE && resultCode == RESULT_OK){
-//            getNotes();
-//        }
-//    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE_ADD_NOTE && resultCode == RESULT_OK){
+            getNotes();
+        }
+    }
 }
