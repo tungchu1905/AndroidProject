@@ -110,6 +110,63 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/inputNoteSubtitle"
             />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageNote"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/inputNoteSubtitle"/>
+        <ImageView
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/imageRemoveImage"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/background_delete"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_4sdp"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/white"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/imageNote"
+            app:layout_constraintTop_toTopOf="@+id/imageNote"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutWebUrl"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/imageNote"
+            android:visibility="gone"
+            tools:ignore="UseCompoundDrawables">
+            <TextView
+                android:layout_width = "wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textWebUrl"
+                android:autoLink="web"
+                android:fontFamily="@font/ubuntu_regular"
+                android:includeFontPadding="false"
+                android:textSize="@dimen/_13ssp" />
+
+            <ImageView
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:id="@+id/imageRemoveWebUrl"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/Delete"
+                />
+        </LinearLayout>
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,7 +187,7 @@
             android:textColorHint="@color/TextHint"
             android:textSize="@dimen/_13sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/inputNoteSubtitle"
+            app:layout_constraintTop_toBottomOf="@+id/layoutWebUrl"
 
             />
     </androidx.constraintlayout.widget.ConstraintLayout>

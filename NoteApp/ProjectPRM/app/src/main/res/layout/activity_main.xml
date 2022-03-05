@@ -84,30 +84,30 @@
        app:layout_constraintBottom_toBottomOf="parent"
        >
 
-      <ImageView
-          android:layout_width="@dimen/_26sdp"
-          android:layout_height="@dimen/_26sdp"
-          android:id="@+id/imageAddNote"
-          android:layout_marginStart="@dimen/_15sdp"
-          android:contentDescription="App Name"
-          android:src="@drawable/ic_add_outline"
-          app:tint="@color/Icons" />
-      <ImageView
-          android:layout_width="@dimen/_26sdp"
-          android:layout_height="@dimen/_26sdp"
-          android:id="@+id/imageAddImage"
-          android:layout_marginStart="@dimen/_15sdp"
-          android:contentDescription="App Name"
-          android:src="@drawable/ic_baseline_image_24"
-          app:tint="@color/Icons" />
-      <ImageView
-          android:layout_width="@dimen/_26sdp"
-          android:layout_height="@dimen/_26sdp"
-          android:id="@+id/imageWebLink"
-          android:layout_marginStart="@dimen/_15sdp"
-          android:contentDescription="App Name"
-          android:src="@drawable/ic_web_link"
-          app:tint="@color/Icons" />
+<!--      <ImageView-->
+<!--          android:layout_width="@dimen/_26sdp"-->
+<!--          android:layout_height="@dimen/_26sdp"-->
+<!--          android:id="@+id/imageAddNote"-->
+<!--          android:layout_marginStart="@dimen/_15sdp"-->
+<!--          android:contentDescription="App Name"-->
+<!--          android:src="@drawable/ic_add_outline"-->
+<!--          app:tint="@color/Icons" />-->
+<!--      <ImageView-->
+<!--          android:layout_width="@dimen/_26sdp"-->
+<!--          android:layout_height="@dimen/_26sdp"-->
+<!--          android:id="@+id/imageAddImage"-->
+<!--          android:layout_marginStart="@dimen/_15sdp"-->
+<!--          android:contentDescription="App Name"-->
+<!--          android:src="@drawable/ic_baseline_image_24"-->
+<!--          app:tint="@color/Icons" />-->
+<!--      <ImageView-->
+<!--          android:layout_width="@dimen/_26sdp"-->
+<!--          android:layout_height="@dimen/_26sdp"-->
+<!--          android:id="@+id/imageWebLink"-->
+<!--          android:layout_marginStart="@dimen/_15sdp"-->
+<!--          android:contentDescription="App Name"-->
+<!--          android:src="@drawable/ic_web_link"-->
+<!--          app:tint="@color/Icons" />-->
    </LinearLayout>
    <ImageView
        android:id="@+id/imageAddNoteMain"
