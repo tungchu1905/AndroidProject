@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,12 @@ import com.example.android_projectnoteapp.entities.Note;
 import com.example.android_projectnoteapp.listeners.NotesListener;
 import com.makeramen.roundedimageview.RoundedImageView;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.logging.Handler;
 
 // ADAPTER lấy dữ liệu từ bộ dữ liệu và tạo ra các đối tượngView
 //RecyclerView.Adapter Quản lý dữ liệu và cập nhật dữ liệu cần hiện thị vào View
@@ -27,9 +33,15 @@ public class NoteAdapters extends  RecyclerView.Adapter<NoteAdapters.NoteViewHol
 
     //VIEW AND UPDATE
     private NotesListener notesListener;
+
+    //Search
+    private Timer timer;
+    private List<Note> noteSource;
+
     public NoteAdapters(List<Note> noteList, NotesListener notesListener) {
         this.noteList = noteList;
         this.notesListener = notesListener;
+        noteSource = noteList;
     }
 
     @NonNull
@@ -103,6 +115,41 @@ public class NoteAdapters extends  RecyclerView.Adapter<NoteAdapters.NoteViewHol
             }else{
                 imageNote.setVisibility(View.GONE);
             }
+        }
+    }
+
+    //SEARCH NOTE
+    public void searchNotes(final String searchKeyword){
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if(searchKeyword.trim().isEmpty()){
+                    noteList = noteSource;
+                }else{
+                    ArrayList<Note> temp = new ArrayList<>();
+                    for (Note note : noteSource) {
+                        if(note.getTitle().toLowerCase().contains(searchKeyword.toLowerCase())
+                                || note.getSubtitle().toLowerCase().contains(searchKeyword.toLowerCase())
+                                || note.getNoteText().toLowerCase().contains(searchKeyword.toLowerCase())){
+                            temp.add(note);
+                        }
+                    }
+                    noteList = temp;
+                }
+//               new Handler(Looper.getMainLooper()).post(new Runnable() {
+//                   @Override
+//                   public void run() {
+//                        notifyDataSetChanged();
+//                   }
+//               });
+            }
+        }, 500);
+    }
+
+    public void cancelTimer(){
+        if(timer != null ){
+            timer.cancel();
         }
     }
 }
