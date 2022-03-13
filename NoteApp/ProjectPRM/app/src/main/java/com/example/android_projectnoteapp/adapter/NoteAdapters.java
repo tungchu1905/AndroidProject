@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Handler;
 import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +25,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.logging.Handler;
 
 // ADAPTER lấy dữ liệu từ bộ dữ liệu và tạo ra các đối tượngView
 //RecyclerView.Adapter Quản lý dữ liệu và cập nhật dữ liệu cần hiện thị vào View
@@ -137,12 +137,12 @@ public class NoteAdapters extends  RecyclerView.Adapter<NoteAdapters.NoteViewHol
                     }
                     noteList = temp;
                 }
-//               new Handler(Looper.getMainLooper()).post(new Runnable() {
-//                   @Override
-//                   public void run() {
-//                        notifyDataSetChanged();
-//                   }
-//               });
+               new Handler(Looper.getMainLooper()).post(new Runnable() {
+                   @Override
+                   public void run() {
+                        notifyDataSetChanged();
+                   }
+               });
             }
         }, 500);
     }

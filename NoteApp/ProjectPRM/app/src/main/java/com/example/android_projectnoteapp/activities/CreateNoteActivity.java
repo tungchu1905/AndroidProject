@@ -36,12 +36,10 @@ import com.example.android_projectnoteapp.database.NoteDatabase;
 import com.example.android_projectnoteapp.entities.Note;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
 
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import java.util.regex.Pattern;
 
 public class CreateNoteActivity extends AppCompatActivity {
 
@@ -214,18 +212,6 @@ public class CreateNoteActivity extends AppCompatActivity {
      private void initMixedLayout(){
         final LinearLayout layoutMixed = findViewById(R.id.layout_mixed);
         final BottomSheetBehavior<LinearLayout> bottomSheetBehavior = BottomSheetBehavior.from(layoutMixed);
-
-        layoutMixed.findViewById(R.id.textMixed).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(bottomSheetBehavior.getState()!= BottomSheetBehavior.STATE_EXPANDED){
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
-                }else{
-                    bottomSheetBehavior.setState(BottomSheetBehavior.STATE_COLLAPSED);
-                }
-            }
-        });
-
         final  ImageView imageColor1 = layoutMixed.findViewById(R.id.imageColor1);
         final  ImageView imageColor2 = layoutMixed.findViewById(R.id.imageColor2);
         final  ImageView imageColor3 = layoutMixed.findViewById(R.id.imageColor3);
